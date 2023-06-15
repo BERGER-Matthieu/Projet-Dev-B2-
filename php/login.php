@@ -2,14 +2,15 @@
     require_once("connect.php");
 
     $nameOrEmail = $_POST['loginNameOrEmail'];
-    $password = $_POST['loginPassword'];
+    $password = md5($_POST['loginPassword']);
 
     $sql = "SELECT * FROM profile WHERE ( email = '$nameOrEmail' OR name = '$nameOrEmail' ) AND password = '$password'";
     $result = $conn->query($sql);
 
     if($result->num_rows > 0) {
-        echo "patate";
+        header("Location: http://localhost/Projet-Dev-B2-/pages/home.php");
     } else {
-        echo "pas patate";
+        $error = "No such accounts";
+        header("Location: http://localhost/Projet-Dev-B2-/pages/login-register.php?error=".$error);
     }
 ?>

@@ -34,5 +34,9 @@
         <input type="submit" value="friends">
     </form>
 
+    <form action="global-chat.php" method="post">
+        <input type="submit" value="global">
+    </form>
+
 </body>
 </html>

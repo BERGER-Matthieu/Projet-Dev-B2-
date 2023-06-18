@@ -10,5 +10,5 @@
     $sql = "INSERT INTO messages (senderId, receiverId, content, time) VALUES ('$id', '$friendId', '$content', '$dateTime')";
     $conn->query($sql);
 
-    header("Location: http://localhost/Projet-Dev-B2-/pages/message.php?id=".$friendId);
+    header("Location: http://localhost/Projet-Dev-B2-/pages/chat.php?id=".$friendId);
 ?>

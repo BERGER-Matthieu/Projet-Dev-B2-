@@ -43,7 +43,7 @@
                 ?><form action="<?php echo "../php/friends/remove-friend.php?id=".$row['id']; ?>" method="post">
                     <input type="submit" value="remove">
                 </form>
-                <form action="<?php echo "message.php?id=".$row['id']; ?>" method="post">
+                <form action="<?php echo "chat.php?id=".$row['id']; ?>" method="post">
                     <input type="submit" value="send">
                 </form><?php
             ?></p>

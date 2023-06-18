@@ -4,7 +4,7 @@
 
     $id = $_SESSION['id'];
     $friendId = $_GET['id'];
-    $sql = "SELECT * FROM messages INNER JOIN profile ON messages.senderId=profile.id WHERE (senderId=$id AND receiverId=$friendId) OR (senderId=$friendId AND receiverId=$id)";
+    $sql = "SELECT * FROM messages INNER JOIN profile ON messages.senderId=profile.id WHERE (senderId=$id AND receiverId=$friendId) OR (senderId=$friendId AND receiverId=$id) ORDER BY time DESC";
     $result = $conn->query($sql);
 ?>
 
@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages</title>
+    <title>Chat</title>
 </head>
 <body>
     <form action="friends-list.php" method="post">
@@ -28,6 +28,9 @@
             ?></h2>
             <p><?php
                 echo $row['content'];
+            ?></p>
+            <p><?php
+                echo $row['time'];
             ?></p>
         <?php
         }

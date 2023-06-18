@@ -8,7 +8,7 @@
     }
 
     $id = $_SESSION['id'];
-    $sql = "SELECT * FROM friends WHERE userId = $id";
+    $sql = "SELECT * FROM profile INNER JOIN friends ON friends.friendId=profile.id WHERE friends.userId = $id";
     $result = $conn->query($sql);
 ?>
 
@@ -39,16 +39,10 @@
     <div><?php
         while ($row = mysqli_fetch_assoc($result)) {?>
             <p><?php
-                $friendId = $row['friendId'];
-                $sql = "SELECT * FROM profile WHERE id = '$friendId' and name LIKE '%$name%'";
-                $friendResult = $conn->query($sql);
-                $row = $friendResult->fetch_assoc();
-                if (isset($row['id'])) {
-                    echo $row['name'] . "#" . $row['id'];
-                    ?><form action="<?php echo "../php/friends/remove-friend.php?id=".$row['id']; ?>" method="post">
-                        <input type="submit" value="remove">
-                    </form><?php
-                }
+                echo $row['name'] . "#" . $row['id'];
+                ?><form action="<?php echo "../php/friends/remove-friend.php?id=".$row['id']; ?>" method="post">
+                    <input type="submit" value="remove">
+                </form><?php
             ?></p>
         <?php
         }

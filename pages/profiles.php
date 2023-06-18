@@ -41,7 +41,7 @@
             ?>
             <p><?php echo $row['name'] . "#" . $row['id'];?></p>
             <form action="<?php echo "../php/friends/add-friend.php?id=".$row['id']; ?>" method="post">
-                <input type="submit" value="enter">
+                <input type="submit" value="add friend">
             </form>
             <?php
         }

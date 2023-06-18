@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profiles</title>
+    <title>Friends</title>
 </head>
 <body>
     <form action="home.php" method="post">
@@ -42,6 +42,9 @@
                 echo $row['name'] . "#" . $row['id'];
                 ?><form action="<?php echo "../php/friends/remove-friend.php?id=".$row['id']; ?>" method="post">
                     <input type="submit" value="remove">
+                </form>
+                <form action="<?php echo "message.php?id=".$row['id']; ?>" method="post">
+                    <input type="submit" value="send">
                 </form><?php
             ?></p>
         <?php

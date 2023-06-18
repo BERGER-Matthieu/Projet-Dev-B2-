@@ -8,7 +8,7 @@
     }
 
     $id = $_SESSION['id'];
-    $sql = "SELECT * FROM profile WHERE id != $id and name LIKE '%$name%'";
+    $sql = "SELECT * FROM friends WHERE userId = $id";
     $result = $conn->query($sql);
 ?>
 
@@ -31,19 +31,26 @@
         }
     ?></p>
     
-    <form action="profiles.php" method="post">
+    <form action="friends-list.php" method="post">
         <input type="text" id="home-friend-input" name="homeFriendInput" placeholder="Looking for someone ?">
         <input type="submit" value="enter">
     </form>
 
     <div><?php
-        while ($row = mysqli_fetch_assoc($result)) {
-            ?>
-            <p><?php echo $row['name'] . "#" . $row['id'];?></p>
-            <form action="<?php echo "../php/friends/add-friend.php?id=".$row['id']; ?>" method="post">
-                <input type="submit" value="enter">
-            </form>
-            <?php
+        while ($row = mysqli_fetch_assoc($result)) {?>
+            <p><?php
+                $friendId = $row['friendId'];
+                $sql = "SELECT * FROM profile WHERE id = '$friendId' and name LIKE '%$name%'";
+                $friendResult = $conn->query($sql);
+                $row = $friendResult->fetch_assoc();
+                if (isset($row['id'])) {
+                    echo $row['name'] . "#" . $row['id'];
+                    ?><form action="<?php echo "../php/friends/remove-friend.php?id=".$row['id']; ?>" method="post">
+                        <input type="submit" value="remove">
+                    </form><?php
+                }
+            ?></p>
+        <?php
         }
     ?></div>
 </body>

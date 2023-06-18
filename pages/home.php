@@ -16,7 +16,7 @@
     <title>Home</title>
 </head>
 <body>
-    <form action="../php/log-out.php" method="post">
+    <form action="../php/login/log-out.php" method="post">
         <input type="submit" value="log out">
     </form>
 
@@ -28,6 +28,10 @@
     <form action="profiles.php" method="post">
         <input type="text" id="home-friend-input" name="homeFriendInput" placeholder="Looking for someone ?">
         <input type="submit" value="enter">
+    </form>
+
+    <form action="friends-list.php" method="post">
+        <input type="submit" value="friends">
     </form>
 
 </body>

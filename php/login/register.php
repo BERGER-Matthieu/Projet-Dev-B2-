@@ -1,5 +1,5 @@
 <?php
-    require_once "connect.php";
+    require_once "../connect.php";
     require_once "register-error-check.php";
 
     $name = $_POST['registerName'];

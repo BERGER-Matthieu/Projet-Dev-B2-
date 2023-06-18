@@ -1,5 +1,5 @@
 <?php
-    require_once("connect.php");
+    require_once("../connect.php");
 
     $nameOrEmail = $_POST['loginNameOrEmail'];
     $password = md5($_POST['loginPassword']);

@@ -20,32 +20,34 @@
     <title>Friends</title>
 </head>
 <body>
-    <?php
-        if ($id == $_SESSION['id']){
-            ?>
-                <form action="home.php" method="post">
-                    <input type="submit" value="home">
-                </form>
-            <?php
-        } else {    
-            ?>
-                <form action="friends-list.php" method="post">
-                    <input type="submit" value="friends">
-                </form>
-            <?php
-        }
-    ?>
-    
-
-    <p><?php
-        if(isset($_GET['error'])){
-            echo $_GET['error'];
-        }
-    ?></p>
+    <form action="home.php" method="post">
+        <input type="submit" value="home">
+    </form>
 
     <p><?php
         $row = $result->fetch_assoc();
-        echo $row['name'];
+        echo $row['name']."#".$row['id'];
     ?></p>
+
+    <?php
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM profile INNER JOIN games ON games.playerId=profile.id  WHERE id=$id";
+        $result = $conn->query($sql);
+
+        if($result->num_rows > 0) {?>
+            <div>
+            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+            <p>
+                <?php echo "points : ".$row['points']; ?>
+                <?php echo "kills : ".$row['kills']; ?>
+                <?php echo "time : ".$row['time']; ?>
+            </p>
+            <?php
+            }
+            ?>
+            </div>
+        <?php
+        }
+        ?>
 </body>
 </html>

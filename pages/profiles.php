@@ -43,6 +43,9 @@
             <form action="<?php echo "../php/friends/add-friend.php?id=".$row['id']; ?>" method="post">
                 <input type="submit" value="add friend">
             </form>
+            <form action="<?php echo "profile.php?id=".$row['id']; ?>" method="post">
+                <input type="submit" value="profile">
+            </form>
             <?php
         }
     ?></div>

@@ -38,5 +38,9 @@
         <input type="submit" value="global">
     </form>
 
+    <form action="forum.php" method="post">
+        <input type="submit" value="forum">
+    </form>
+
 </body>
 </html>

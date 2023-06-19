@@ -23,10 +23,10 @@
 
     <form action="../php/login/register.php" method="post">
         <div id = "register">
-            <input type="text" id="register-name" name="registerName" placeholder="name">
-            <input type="email" id="register-email" name="registerEmail" placeholder="email">
-            <input type="password" id="register-password1" name="registerPassword1" placeholder="password">
-            <input type="password" id="register-password2" name="registerPassword2" placeholder="confirm password">
+            <input type="text" maxlength="20" id="register-name" name="registerName" placeholder="name (20 char max)">
+            <input type="email" maxlength="255" id="register-email" name="registerEmail" placeholder="email">
+            <input type="password" maxlength="255" id="register-password1" name="registerPassword1" placeholder="password">
+            <input type="password" maxlength="255" id="register-password2" name="registerPassword2" placeholder="confirm password">
             <input type="submit" value="register">
         </div>
     </form>

@@ -38,15 +38,18 @@
 
     <div><?php
         while ($row = mysqli_fetch_assoc($result)) {?>
-            <p><?php
-                echo $row['name'] . "#" . $row['id'];
-                ?><form action="<?php echo "../php/friends/remove-friend.php?id=".$row['id']; ?>" method="post">
-                    <input type="submit" value="remove">
-                </form>
-                <form action="<?php echo "chat.php?id=".$row['id']; ?>" method="post">
-                    <input type="submit" value="send">
-                </form><?php
-            ?></p>
+            <p>
+                <?php echo $row['name'] . "#" . $row['id']; ?>
+            </p>
+            <form action="<?php echo "../php/friends/remove-friend.php?id=".$row['id']; ?>" method="post">
+                <input type="submit" value="remove">
+            </form>
+            <form action="<?php echo "chat.php?id=".$row['id']; ?>" method="post">
+                <input type="submit" value="send">
+            </form>
+            <form action="<?php echo "profile.php?id=".$row['id']; ?>" method="post">
+                <input type="submit" value="profile">
+            </form>
         <?php
         }
     ?></div>

@@ -14,18 +14,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
+    <title>Display Chat</title>
 </head>
 <body>
-    <form action="friends-list.php" method="post">
-        <input type="submit" value="friends">
-    </form>
-
-    <iframe src="<?php echo "http://localhost/Projet-Dev-B2-/pages/display-chat.php?id=".$friendId; ?>" name="chatIframe" id="chat-iframe"></iframe>
-
-    <form action="<?php echo "../php/message/add-message.php?id=".$friendId; ?>" method="post">
-        <input type="text" placeholder="Enter your text here." name="messageContent" id="message-content">
-        <input type="submit" value="send message">
-    </form>
+    <div><?php
+        while ($row = mysqli_fetch_assoc($result)) {?>
+            <h2><?php
+                echo $row['name'];
+            ?></h2>
+            <p><?php
+                echo $row['content'];
+            ?></p>
+            <p><?php
+                echo $row['time'];
+            ?></p>
+        <?php
+        }
+    ?></div>
 </body>
 </html>

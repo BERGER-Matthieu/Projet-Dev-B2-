@@ -4,7 +4,7 @@
 
     $id = $_SESSION['id'];
     $friendId = $_GET['id'];
-    $sql = "SELECT * FROM messages INNER JOIN profile ON messages.senderId=profile.id WHERE (senderId=$id AND receiverId=$friendId) OR (senderId=$friendId AND receiverId=$id) ORDER BY time DESC";
+    $sql = "SELECT * FROM messages INNER JOIN profile ON messages.senderId=profile.id WHERE (senderId=$id AND receiverId=$friendId) OR (senderId=$friendId AND receiverId=$id) ORDER BY time";
     $result = $conn->query($sql);
 ?>
 

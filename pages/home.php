@@ -45,6 +45,6 @@
     <form action="<?php echo "profile.php?id=".$id; ?>" method="post">
         <input type="submit" value="profile">
     </form>
-
+    
 </body>
 </html>

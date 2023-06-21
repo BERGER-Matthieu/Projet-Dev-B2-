@@ -3,6 +3,13 @@
     session_start();
 
     $id = $_SESSION['id'];
+
+    $sql = "SELECT * FROM profile WHERE id = $id";
+    $result = $conn->query($sql);
+
+    $row = $result->fetch_assoc();
+    $isAdmin = $row['isAdmin'];
+
     $sql = "SELECT * FROM messages INNER JOIN profile ON messages.senderId=profile.id WHERE receiverId IS NULL";
     $result = $conn->query($sql);
 ?>
@@ -31,6 +38,15 @@
             <p><?php
                 echo $row['time'];
             ?></p>
+            <?php
+                if($isAdmin) {
+            ?>
+            <form action="<?php echo "../php/crud/remove-global-message.php?id=".$row['messageId']; ?>" method="post">
+                <input type="submit" value="remove">
+            </form>
+            <?php
+                }   
+            ?>
         <?php
         }
     ?></div>

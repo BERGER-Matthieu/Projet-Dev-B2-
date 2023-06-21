@@ -8,6 +8,7 @@
 
     $id = $_GET['id'];
     $sql = "SELECT * FROM profile WHERE id=$id";
+
     $result = $conn->query($sql);
 ?>
 
@@ -29,9 +30,35 @@
         echo $row['name']."#".$row['id'];
     ?></p>
 
+    <form action=""<?php echo "../php/pages/profile.php?id=".$id; ?> method="post">
+        <p>Order by ?</p>
+        <input type="radio" id="contactChoice1" name="filter" value="points" />
+        <label for="contactChoice1">Points</label> <br>
+        <input type="radio" id="contactChoice1" name="filter" value="kills" />
+        <label for="contactChoice1">Kills</label> <br>
+        <input type="radio" id="contactChoice1" name="filter" value="time" />
+        <label for="contactChoice1">Time</label> <br>
+
+        <p>Descending ?</p>
+        <input type="radio" id="contactChoice1" name="order" value="order" />
+        <label for="contactChoice1">Points</label> <br>
+        
+        <input type="submit" value="filter">
+    </form>
+
     <?php
         $id = $_GET['id'];
-        $sql = "SELECT * FROM profile INNER JOIN games ON games.playerId=profile.id  WHERE id=$id";
+
+        if(isset($_POST['filter'])){
+            $filter = $_POST['filter'];
+            $sql = "SELECT * FROM profile INNER JOIN games ON games.playerId=profile.id  WHERE id=$id ORDER BY $filter";
+        } else {
+            $sql = "SELECT * FROM profile INNER JOIN games ON games.playerId=profile.id  WHERE id=$id ORDER BY gameId";
+        }
+
+        if(isset($_POST['order'])){
+            $sql .= " DESC";
+        }
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {?>

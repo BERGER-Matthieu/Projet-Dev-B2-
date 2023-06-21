@@ -6,7 +6,7 @@
         $id = $_SESSION['id'];
         $friendId = $_GET['id'];
         $content = $_POST['messageContent'];
-        $dateTime = date('y-m-d h:m:s');
+        $dateTime = date('y-m-d H:i:s');
         
         $sql = "INSERT INTO messages (senderId, receiverId, content, time) VALUES ('$id', '$friendId', '$content', '$dateTime')";
         $conn->query($sql);

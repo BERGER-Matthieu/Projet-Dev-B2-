@@ -11,4 +11,4 @@
     $conn->query($sql);
 
     header("Location: http://localhost/Projet-Dev-B2-/pages/score-creation.php");
-?>
+?>s

@@ -19,6 +19,7 @@
 <body>
     <div><?php
         while ($row = mysqli_fetch_assoc($result)) {?>
+        <div style="width:200px;">
             <h2><?php
                 echo $row['name'];
             ?></h2>
@@ -28,6 +29,7 @@
             <p><?php
                 echo $row['time'];
             ?></p>
+        </div>
         <?php
         }
     ?></div>

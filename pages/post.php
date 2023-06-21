@@ -25,9 +25,9 @@
             <h2><?php
                 echo $row['title'];
             ?></h2>
-            <p><?php
+            <a href=<?php echo "profile.php?id=".$row['id']; ?>><?php
                 echo $row['name'];
-            ?></p>
+            ?></a>
             <p><?php
                 echo $row['content'];
             ?></p>

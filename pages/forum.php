@@ -3,6 +3,13 @@
     session_start();
 
     $id = $_SESSION['id'];
+
+    $sql = "SELECT * FROM profile WHERE id = $id";
+    $result = $conn->query($sql);
+
+    $row = $result->fetch_assoc();
+    $isAdmin = $row['isAdmin'];
+
     $sql = "SELECT * FROM post INNER JOIN profile ON post.creatorId=profile.id";
     $result = $conn->query($sql);
 ?>
@@ -34,6 +41,15 @@
             <p><?php
                 echo $row['name']." at : ".$row['time'];
             ?></p> 
+            <?php
+                if($isAdmin) {
+            ?>
+            <form action="<?php echo "../php/crud/remove-post.php?id=".$row['postId']; ?>" method="post">
+                <input type="submit" value="remove">
+            </form>
+            <?php
+                }   
+            ?>
         <?php
         }
     ?></div>

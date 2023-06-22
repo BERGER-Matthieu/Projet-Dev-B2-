@@ -12,6 +12,17 @@ body {
     color: beige;
 }
 
+#api-button {
+    margin-top: 8px;
+    background-color: rgb(51, 41, 91);
+    border-style: none;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 8px;
+    border-radius: 8px;
+    color: beige;
+}
+
 #full-block {
     position: absolute;
     top: 50%;

@@ -20,6 +20,9 @@
     <form action="../php/login/log-out.php" method="post">
         <input id="logout" type="submit" value="log out">
     </form>
+    <form action="api-games.php" method="post">
+        <input id="api-button" type="submit" value="api">
+    </form>
 
     <div id="full-block">
         <div id="name">

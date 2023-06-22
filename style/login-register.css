@@ -1,0 +1,81 @@
+body {
+    background-color: rgb(25, 20, 44);
+}
+
+#login {
+    background-color: rgb(1, 148, 31);
+    height: 160px;
+    padding: 16px 8px 16px 8px;
+    margin: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#register input {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(232, 1, 1);
+    border-style: none;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 8px;
+}
+
+#login input {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(0, 194, 39);
+    border-style: none;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 8px;
+}
+
+::placeholder {
+    color :beige;
+}
+
+#login input[type=submit] {
+    background-color: beige;
+    width: auto;
+}
+
+#register input[type=submit] {
+    background-color: beige;
+}
+
+#register {
+    background-color: rgb(190, 2, 2);
+    height: 160px;
+    padding: 16px 8px 16px 8px;
+    margin: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#full-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: auto;
+    display: table-column;
+}
+
+#login-and-register {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#title{
+    text-align: center;
+    font-family: sans-serif;
+    color: beige;
+}
+

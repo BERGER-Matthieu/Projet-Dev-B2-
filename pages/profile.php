@@ -18,33 +18,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style/profile.css">
     <title>Friends</title>
 </head>
 <body>
     <form action="home.php" method="post">
-        <input type="submit" value="home">
+        <input id="home" type="submit" value="home">
     </form>
 
-    <p><?php
-        $row = $result->fetch_assoc();
-        echo $row['name']."#".$row['id'];
-    ?></p>
-
-    <form action=""<?php echo "../php/pages/profile.php?id=".$id; ?> method="post">
-        <p>Order by ?</p>
-        <input type="radio" id="contactChoice1" name="filter" value="points" />
-        <label for="contactChoice1">Points</label> <br>
-        <input type="radio" id="contactChoice1" name="filter" value="kills" />
-        <label for="contactChoice1">Kills</label> <br>
-        <input type="radio" id="contactChoice1" name="filter" value="time" />
-        <label for="contactChoice1">Time</label> <br>
-
-        <p>Descending ?</p>
-        <input type="radio" id="contactChoice1" name="order" value="order" />
-        <label for="contactChoice1">Points</label> <br>
-        
-        <input type="submit" value="filter">
-    </form>
+    <div id="full-block">
+    <div id="name">
+        <h2><?php
+            $row = $result->fetch_assoc();
+            echo $row['id']."# ".$row['name'];
+        ?></h2>
+    </div>
+        <form action=""<?php echo "../php/pages/profile.php?id=".$id; ?> method="post">
+            <div class="filter-block"> 
+            <h3>Order by ?</h3>
+                <input type="radio" id="contactChoice1" name="filter" value="points" />
+                <p for="contactChoice1">Points</p> 
+                <input type="radio" id="contactChoice1" name="filter" value="kills" />
+                <p for="contactChoice1">Kills</p> 
+                <input type="radio" id="contactChoice1" name="filter" value="time" />
+                <p for="contactChoice1">Time</p> 
+                <br>
+                <h3>Descending ?</h3>
+                <input type="radio" id="contactChoice1" name="order" value="order" />
+                <p for="contactChoice1">Yes</p> <br>
+            
+                <input type="submit" value="filter">
+            </div>
+        </form>
 
     <?php
         $id = $_GET['id'];
@@ -62,19 +67,30 @@
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {?>
-            <div>
+            <div class="score-block">
+            <p id="points">Points</p>
+            <p id="kills">Kills</p>
+            <p id="time">Time</p>
+            </div>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-            <p>
-                <?php echo "points : ".$row['points']; ?>
-                <?php echo "kills : ".$row['kills']; ?>
-                <?php echo "time : ".$row['time']; ?>
+            <div class="score-block">
+            <p id="points">
+                <?php echo $row['points']; ?>
             </p>
+            <p id="kills">
+                <?php echo $row['kills']; ?>
+            </p>
+            <p id="time">
+                <?php echo $row['time']; ?>
+            </p>
+            </div>
             <?php
             }
             ?>
-            </div>
+        </div>
         <?php
         }
         ?>
+    </div>
 </body>
 </html>

@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(25, 20, 44);
+}
+
+#home {
+    background-color: rgb(43, 35, 78);
+    border-style: none;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 8px;
+    border-radius: 8px;
+    color: beige;
+}
+
+#full-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: auto;
+    display: table-column;
+}
+
+#full-block p{
+    text-align: center;
+    font-family: sans-serif;
+    color: beige;
+    margin: 0;
+}
+
+.profile-block {
+    background-color: rgb(43, 35, 78);
+    height: 16px;
+    width: 300px;
+    padding: 16px 8px 16px 8px;
+    margin: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-block input[type=text] {
+    border-style: none;
+    width: 296px;
+    border-radius: 8px 8px 0 0;
+    background-color: beige;
+}
+
+::placeholder {
+    text-align: center;
+    color: black;
+}
+
+.profile-block input[type=submit] {
+    border-style: none;
+    border-radius: 8px;
+    background-color: rgb(79, 64, 137);
+    color: beige;
+}
+
+#profiles input[type=submit]{
+    border-style: none;
+    border-radius: 0 0 8px 8px ;
+    width: 300px;
+    margin-top: 0;
+    background-color: rgb(79, 64, 137);
+}
+
+#profiles {
+    height: 32px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}

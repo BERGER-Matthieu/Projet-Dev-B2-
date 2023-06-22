@@ -20,36 +20,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style/forum.css">
     <title>Forum</title>
 </head>
 <body>
     <form action="home.php" method="post">
-        <input type="submit" value="home">
+        <input id="home" type="submit" value="home">
     </form>
 
     <form action="post-creation.php" method="post">
-        <input type="submit" value="add post">
+        <input id="add-post"type="submit" value="add post">
     </form>
 
-    <div><?php
+    <div id="full-block"><?php
         while ($row = mysqli_fetch_assoc($result)) {?>
-            <h2>
-                <a href=<?php echo "post.php?id=".$row['postId']?>>
-                    <?php echo $row['title']; ?>
-                </a>  
-            </h2>
-            <p><?php
-                echo $row['name']." at : ".$row['time'];
-            ?></p> 
-            <?php
-                if($isAdmin) {
-            ?>
-            <form action="<?php echo "../php/crud/remove-post.php?id=".$row['postId']; ?>" method="post">
-                <input type="submit" value="remove">
-            </form>
-            <?php
+            <div class="message-block"> 
+                <h2>
+                    <a href=<?php echo "post.php?id=".$row['postId']?>>
+                        <?php echo $row['title']; ?>
+                    </a>  
+                </h2>
+                <p class="time"><?php
+                    echo $row['name']." at : ".$row['time'];
+                ?></p> 
+                <?php
+                    if($isAdmin) {
+                ?>
+                <form action="<?php echo "../php/crud/remove-post.php?id=".$row['postId']; ?>" method="post">
+                    <input class="remove" type="submit" value="remove">
+                </form>
+                <?php
                 }   
-            ?>
+                ?>
+            </div>
         <?php
         }
     ?></div>

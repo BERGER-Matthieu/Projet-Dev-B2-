@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(25, 20, 44);
+}
+
+#logout {
+    background-color: rgb(232, 1, 1);
+    border-style: none;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 8px;
+    border-radius: 8px;
+    color: beige;
+}
+
+#full-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: auto;
+    display: table-column;
+}
+
+#name{
+    text-align: center;
+    font-family: sans-serif;
+    color: beige;
+}
+
+#buttons {
+    background-color: rgb(43, 35, 78);
+    height: 160px;
+    width: 300px;
+    padding: 16px 8px 16px 8px;
+    margin: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#buttons input {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(79, 64, 137);
+    border-style: none;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 8px;
+}
+
+::placeholder {
+    color :black;
+}
+
+#buttons input[type=text] {
+    width: 276px;
+    border-radius: 8px 8px 0 0;
+    background-color: beige;
+}
+
+#profiles input[type=submit]{
+    border-radius: 0 0 8px 8px;
+    width: 280px;
+}
+
+#buttons input[type=submit] {
+    width: 280px;
+    color: beige;
+}

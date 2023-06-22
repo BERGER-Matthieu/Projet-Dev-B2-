@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(25, 20, 44);
+}
+
+#forum {
+    background-color: rgb(43, 35, 78);
+    border-style: none;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 8px;
+    border-radius: 8px;
+    color: beige;
+}
+
+#full-block .time {
+    color: rgb(75, 62, 134);
+}
+
+#full-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: auto;
+    display: table-column;
+}
+
+#full-block p{
+    text-align: center;
+    font-family: sans-serif;
+    color: beige;
+    margin: 0;
+}
+
+#full-block h2{
+    text-align: center;
+    font-family: sans-serif;
+    color: beige;
+    margin: 0;
+}
+
+#full-block h2{
+    text-align: center;
+    font-family: sans-serif;
+    color: beige;
+    margin: 0;
+}
+
+.message-block {
+    background-color: rgb(43, 35, 78);
+    height: auto;
+    width: 300px;
+    padding: 16px 8px 16px 8px;
+    margin: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a {
+    position: relative;
+    text-align: center;
+    color: rgb(70, 56, 134);
+    font-family: sans-serif;
+}

@@ -10,5 +10,5 @@
     $sql = "INSERT INTO post (creatorId, title, content, time) VALUES ('$id', '$title', '$content', '$dateTime')";
     $conn->query($sql);
 
-    header("Location: http://localhost/Projet-Dev-B2-/pages/forum.php");
+    header("Location: /pages/forum.php");
 ?>

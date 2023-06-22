@@ -12,9 +12,9 @@
         $row = $result->fetch_assoc();
         $_SESSION['logedIn'] = TRUE;
         $_SESSION['id'] = $row['id'];
-        header("Location: http://localhost/Projet-Dev-B2-/pages/home.php");
+        header("Location: /pages/home.php");
     } else {
         $error = "No such accounts";
-        header("Location: http://localhost/Projet-Dev-B2-/pages/login-register.php?error=".$error);
+        header("Location: /pages/login-register.php?error=".$error);
     }
 ?>

@@ -9,7 +9,7 @@
     
     if(isFriend($userId, $friendId)[0]){
         $error = isFriend($userId, $friendId)[1];
-        header("Location: http://localhost/Projet-Dev-B2-/pages/profiles.php?error=".$error);
+        header("Location: /pages/profiles.php?error=".$error);
         exit();
     }
 
@@ -17,5 +17,5 @@
     $conn->query($sql);
 
     $error = "friend has been added";
-    header("Location: http://localhost/Projet-Dev-B2-/pages/profiles.php?error=".$error);
+    header("Location: /pages/profiles.php?error=".$error);
 ?>

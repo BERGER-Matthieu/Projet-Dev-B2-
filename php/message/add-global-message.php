@@ -9,5 +9,5 @@
     $sql = "INSERT INTO messages (senderId, content, time) VALUES ('$id', '$content', '$dateTime')";
     $conn->query($sql);
 
-    header("Location: http://localhost/Projet-Dev-B2-/pages/global-chat.php");
+    header("Location: /pages/global-chat.php");
 ?>

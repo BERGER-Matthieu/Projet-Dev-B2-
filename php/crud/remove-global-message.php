@@ -17,5 +17,5 @@
         $conn->query($sql);
     }
 
-    header("Location: http://localhost/Projet-Dev-B2-/pages/global-chat.php");
+    header("Location: /pages/global-chat.php");
 ?>

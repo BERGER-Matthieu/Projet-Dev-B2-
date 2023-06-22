@@ -21,7 +21,7 @@
         <input type="submit" value="friends">
     </form>
 
-    <iframe src="<?php echo "http://localhost/Projet-Dev-B2-/pages/display-chat.php?id=".$friendId; ?>" name="chatIframe" id="chat-iframe"></iframe>
+    <iframe src="<?php echo "/pages/display-chat.php?id=".$friendId; ?>" name="chatIframe" id="chat-iframe"></iframe>
 
     <form action="<?php echo "../php/message/add-message.php?id=".$friendId; ?>" method="post">
         <input type="text" placeholder="Enter your text here." name="messageContent" id="message-content">

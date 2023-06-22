@@ -12,5 +12,5 @@
         $conn->query($sql);
     }
 
-    header("Location: http://localhost/Projet-Dev-B2-/pages/chat.php?id=".$_GET['id']);
+    header("Location: /pages/chat.php?id=".$_GET['id']);
 ?>

@@ -9,13 +9,13 @@
 
     if(!checkRegisterPasswords($password ,$confirmPassword)[0]){
         $error = checkRegisterPasswords($password ,$confirmPassword)[1];
-        header("Location: http://localhost/Projet-Dev-B2-/pages/login-register.php?error=".$error);
+        header("Location: /pages/login-register.php?error=".$error);
         exit;
     }
 
     if(!checkRegisterEmail($email)[0]){
         $error = checkRegisterEmail($email)[1];
-        header("Location: http://localhost/Projet-Dev-B2-/pages/login-register.php?error=".$error);
+        header("Location: /pages/login-register.php?error=".$error);
         exit;
     }
 
@@ -23,5 +23,5 @@
     $sql = "INSERT INTO profile (name, email, password) VALUES ('$name', '$email', '$password')";
     $conn->query($sql);
     $msg = "You can now login with this account";
-    header("Location: http://localhost/Projet-Dev-B2-/pages/login-register.php?error=".$msg);
+    header("Location: /pages/login-register.php?error=".$msg);
 ?>
